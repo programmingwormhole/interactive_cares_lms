@@ -26,6 +26,7 @@ class AuthServices {
     if (request.statusCode == 200) {
       print(request.body);
       pref.setString('token', jsonDecode(request.body)['response']['token']);
+      pref.setString('name', user.fullName!);
       print('Token is ${pref.getString('token')}');
       return true;
     } else {

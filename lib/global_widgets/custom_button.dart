@@ -48,7 +48,7 @@ class CustomButton extends StatelessWidget {
                 buttonTitle,
                 style: GoogleFonts.poppins(
                     color: isBorder == true ? AppColors.primary : Colors.white,
-                    fontSize: 20,
+                    // fontSize: 20,
                     fontWeight: FontWeight.w500
                 ),
               )
@@ -58,7 +58,7 @@ class CustomButton extends StatelessWidget {
               buttonTitle,
               style: GoogleFonts.poppins(
                 color: isBorder == true ? AppColors.primary : Colors.white,
-                fontSize: 20,
+                // fontSize: 20,
                 fontWeight: FontWeight.w500
               ),
             ),

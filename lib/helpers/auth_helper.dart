@@ -7,6 +7,12 @@ class AuthHelper {
     return token;
   }
 
+  static Future<String?> getName () async {
+    final pref = await SharedPreferences.getInstance();
+    final name = pref.getString('name');
+    return name;
+  }
+
   static Future removeToken () async {
     final pref = await SharedPreferences.getInstance();
     pref.remove('token');

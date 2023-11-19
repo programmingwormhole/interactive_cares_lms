@@ -2,9 +2,12 @@ import 'package:get/get.dart';
 import 'package:interactive_cares_lms/routes/route_names.dart';
 import 'package:interactive_cares_lms/views/Authentication/LoginScreen/login_screen.dart';
 import 'package:interactive_cares_lms/views/Authentication/RegisterScreen/register_screen.dart';
+import 'package:interactive_cares_lms/views/BottomBarView/bottom_bar_view.dart';
 import 'package:interactive_cares_lms/views/GetStartedScreen/get_started_screen.dart';
-import 'package:interactive_cares_lms/views/HomeScreen/home_screen.dart';
+import 'package:interactive_cares_lms/views/LearningScreen/lesson_screen.dart';
 import 'package:interactive_cares_lms/views/SplashScreen/splash_screen.dart';
+
+import '../views/LearningScreen/learning_screen.dart';
 
 class Routes {
   static List<GetPage> destination = [
@@ -12,6 +15,8 @@ class Routes {
     GetPage(name: RouteNames.getStarted, page: () => const GetStartedScreen()),
     GetPage(name: RouteNames.login, page: () => const LoginScreen()),
     GetPage(name: RouteNames.register, page: () => const RegisterScreen()),
-    GetPage(name: RouteNames.home, page: () => const HomeScreen()),
+    GetPage(name: RouteNames.home, page: () => const BottomBarView()),
+    GetPage(name: RouteNames.courseLearn, page: () => const LearningScreen()),
+    GetPage(name: RouteNames.lesson, page: () => const LessonScreen()),
   ];
 }

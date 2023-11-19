@@ -19,6 +19,11 @@ dependencies:
   lottie: ^2.6.0
   shared_preferences: ^2.2.2
   google_fonts: ^6.1.0
+  carousel_slider:
+  page_view_dot_indicator: ^2.3.0
+  flutter_staggered_grid_view: ^0.6.2
+  video_player: ^2.7.2
+  chewie: ^1.7.1
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +39,7 @@ flutter:
     - assets/images/
     - assets/svg/
     - assets/json/
+    - assets/videos/
 
   # fonts:
   #   - family: Schyler

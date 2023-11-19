@@ -27,6 +27,7 @@ class TextFormat {
     Color? textColor,
     FontWeight? fontWeight,
     void Function()? onTap,
+    TextDecoration? decoration,
   }) {
     return InkWell(
       onTap: onTap,
@@ -37,6 +38,7 @@ class TextFormat {
           fontSize: 16,
           color: textColor ?? Colors.black.withOpacity(opacity ?? 1),
           fontWeight: fontWeight,
+          decoration: decoration,
         ),
       ),
     );
