@@ -47,40 +47,44 @@ class RegisterScreen extends StatelessWidget {
                             child: Column(
                               children: [
                                 CustomTextField(
-                                  controller: controller.nameController,
                                   topLabelText: 'Full Name',
                                   hintText: 'Enter your full name',
                                   prefixIcon: Icons.person_rounded,
                                   isRequired: true,
+                                  onChanged: (p0) => controller.user.fullName = p0,
                                 ),
                                 const SizedBox(
                                   height: 15,
                                 ),
                                 CustomTextField(
-                                  controller: controller.emailController,
-                                  topLabelText: 'Your Email',
-                                  hintText: 'Enter your email',
+                                  topLabelText: 'Username',
+                                  hintText: 'Enter your username',
                                   prefixIcon: Icons.alternate_email,
                                   isRequired: true,
-                                  keyboardType: TextInputType.emailAddress,
-                                  onChanged: (email) {
-                                    controller.validateEmail(email);
-                                  },
-                                  errorText:
-                                      controller.emailError.value.isNotEmpty
-                                          ? 'Invalid Email Address'
-                                          : null,
+                                  onChanged: (p0) => controller.user.username = p0,
                                 ),
                                 const SizedBox(
                                   height: 15,
                                 ),
                                 CustomTextField(
-                                  controller: controller.passwordController,
+                                  topLabelText: 'Your Email',
+                                  hintText: 'Enter your email',
+                                  prefixIcon: Icons.email_rounded,
+                                  isRequired: true,
+                                  onChanged: (username) {
+                                    controller.user.email = username;
+                                  },
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                CustomTextField(
                                   topLabelText: 'Password',
                                   hintText: 'Enter account password',
                                   prefixIcon: Icons.password,
                                   isRequired: true,
                                   isSecured: true,
+                                  onChanged: (p0) => controller.user.password = p0,
                                 ),
                                 const SizedBox(
                                   height: 15,
@@ -108,27 +112,18 @@ class RegisterScreen extends StatelessWidget {
 
                           // Login Button
                           CustomButton(
+                            isLoading: controller.isLoading.value,
                             buttonTitle: 'Sign Up',
                             onTap: () {
                               // Check the form is valid or not
                               if (controller.globalKey.currentState!
                                   .validate()) {
-                                Get.dialog(
-                                  CustomAlert(
-                                    title: 'Success',
-                                    description:
-                                        'Congratulations, you have completed your registration!',
-                                    buttonText: 'Sounds Good!',
-                                    image: AnimationManager.success,
-                                    isAnimated: true,
-                                    onButtonTap: () =>
-                                        Get.offAllNamed(RouteNames.home),
-                                  ),
-                                  barrierDismissible: false,
-                                );
+                                if (controller.emailError.value.isEmpty &&
+                                    controller
+                                        .confirmPasswordError.value.isEmpty) {
+                                  controller.register();
+                                }
                               }
-
-                              // Otherwise it will trow an error message
                             },
                           ),
                           const SizedBox(

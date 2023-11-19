@@ -13,6 +13,7 @@ class CustomTextField extends StatelessWidget {
   final bool? isRequired;
   final TextEditingController? controller;
   final bool? enabled;
+  final bool? isLogin;
   final void Function(String)? onChanged;
   final String? errorText;
 
@@ -30,6 +31,7 @@ class CustomTextField extends StatelessWidget {
     this.enabled,
     this.onChanged,
     this.errorText,
+    this.isLogin,
   });
 
   @override
@@ -54,9 +56,9 @@ class CustomTextField extends StatelessWidget {
               return 'This field is required';
             }
 
-            if (isSecured == true) {
-              if (value.length < 6) {
-                return 'Password must be at least 6 characters';
+            if (isLogin != true) {
+              if (value.length < 8) {
+                return 'Password must be at least 8 characters';
               }
             }
             return null;

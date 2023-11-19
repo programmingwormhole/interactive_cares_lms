@@ -47,7 +47,6 @@ class LoginScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             CustomTextField(
-                              controller: controller.emailController,
                               topLabelText: 'Your Email',
                               hintText: 'Enter your email',
                               prefixIcon: Icons.alternate_email,
@@ -56,18 +55,22 @@ class LoginScreen extends StatelessWidget {
                               controller.emailError.value.isNotEmpty
                                   ? 'Invalid Email Address'
                                   : null,
-                              onChanged: (email) => controller.validateEmail(email),
+                              onChanged: (email) {
+                                controller.user.email = email;
+                                controller.validateEmail(email);
+                              },
                             ),
                             const SizedBox(
                               height: 15,
                             ),
                             CustomTextField(
-                              controller: controller.passwordController,
                               topLabelText: 'Password',
                               hintText: 'Enter account password',
                               prefixIcon: Icons.password,
                               isRequired: true,
                               isSecured: true,
+                              isLogin: true,
+                              onChanged: (p0) => controller.user.password = p0,
                             ),
                           ],
                         ),
@@ -92,11 +95,12 @@ class LoginScreen extends StatelessWidget {
 
                       // Login Button
                       CustomButton(
+                        isLoading: controller.isLoading.value,
                         buttonTitle: 'Log In',
                         onTap: () {
                           // Check the form is valid or not
                           if (controller.globalKey.currentState!.validate()) {
-                            // Do logic
+                            controller.login();
                           }
 
                           // Otherwise it will trow an error message
