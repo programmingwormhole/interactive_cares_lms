@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:interactive_cares_lms/controllers/course_controller.dart';
 import 'package:interactive_cares_lms/models/course_model.dart';
 import 'package:interactive_cares_lms/routes/route_names.dart';
+import 'package:interactive_cares_lms/utils/assets_manager.dart';
 import 'package:interactive_cares_lms/utils/colors.dart';
 import 'package:interactive_cares_lms/utils/themes.dart';
 import '../../../helpers/star_display_helper.dart';
 
 class MyCourseGrid extends StatelessWidget {
   final CourseModel course;
+
   const MyCourseGrid({
-    Key? key, required this.course,
+    Key? key,
+    required this.course,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CourseController());
+
     return InkWell(
       onTap: () => Get.toNamed(RouteNames.courseLearn, arguments: course),
       child: SizedBox(
@@ -33,7 +39,7 @@ class MyCourseGrid extends StatelessWidget {
                       topRight: Radius.circular(15),
                     ),
                     child: FadeInImage.assetNetwork(
-                      placeholder: 'assets/images/logo.webp',
+                      placeholder: ImageManager.logo,
                       image: course.thumbnail,
                       height: 120,
                       width: double.infinity,
@@ -95,38 +101,54 @@ class MyCourseGrid extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: LinearProgressIndicator(value: course.completedValue),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          TextFormat.extraSmall(
-                            text: '${course.completed}% Completed',
-                            opacity: .5,
-                          )
-                        ],
-                      ),
+                    GetBuilder<CourseController>(
+                      builder: (controller) {
+                        controller.calculateOverallCourseProgress(course);
+                        return Column(
+                          children: [
+                            SizedBox(
+                              width: double.infinity,
+                              child: LinearProgressIndicator(
+                                  value:
+                                      controller.overallCourseProgress.value),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  TextFormat.extraSmall(
+                                    text:
+                                        '${(controller.overallCourseProgress.value * 100).toStringAsFixed(0)}% Completed',
+                                    opacity: .5,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      },
                     ),
                     Container(
                       decoration: BoxDecoration(
-                          border:
-                              Border.all(color: AppColors.primary, width: 1.5),
-                          borderRadius: BorderRadius.circular(15)),
+                        border: Border.all(
+                          color: AppColors.primary,
+                          width: 1.5,
+                        ),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       child: const Center(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 15,
                             vertical: 10,
                           ),
-                          child: Text("Continue Course"),
+                          child: Text("Continue Course",
+                          ),
                         ),
                       ),
                     )

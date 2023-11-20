@@ -7,4 +7,5 @@ class RouteNames {
   static const String home = '/home';
   static const String courseLearn = '/courseLearn';
   static const String lesson = '/lesson';
+  static const String bookmarkPlayer = '/bookmark-player';
 }
