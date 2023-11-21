@@ -33,7 +33,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-Follow the below steps to run the application on you device.
+Follow the below steps to run the application on your device.
 
 1. Clone the repo
    ```sh
@@ -41,7 +41,7 @@ Follow the below steps to run the application on you device.
    ```
 2. Open Project In IDE
    ```sh
-   Android Stduio, VS Code or Others Flutter Supported IDE
+   Android Studio, VS Code, or any other Flutter Supported IDE
    ```
 3. Get Dependencies 
    ```js
@@ -55,29 +55,29 @@ Follow the below steps to run the application on you device.
 <!-- ROADMAP -->
 ## Key Features
 - [x] Authentication using RestAPI.
-- [x] Keep logged in user by storing bearer token.
+- [x] Keep logged-in user by storing bearer token.
 - [x] Home Screen UI
 - [x] Bookmark screen with functionality
-- [x] Play a lesson from bookmark to a specific time in the video.
+- [x] Play a lesson from the bookmark to a specific time in the video.
 - [x] Enrolled Course Screen UI with functionality.
-- [x] Realtime course complete progress.
-- [x] Course moduels
+- [x] Real-time course complete progress.
+- [x] Course modules
 - [x] Course lesson
-- [x] Previous or Next lesson system from lesson screen
+- [x] Previous or Next lesson system from the lesson screen
 - [x] Mark as complete a lesson
-- [x] After complete all lesson in a course students will get a animated dialogue to claim certificate.
+- [x] After completing all lessons in a course students will get an animated dialogue to claim a certificate.
 
 <!-- Package -->
 ## Packages
-- [x] GetX (For State managment)
+- [x] GetX (For State management)
 - [x] http (For API request)
-- [x] flutter_svg (To display SVG icon in app)
-- [x] lottie (To display json animation in app)
+- [x] flutter_svg (To display SVG icon in the app)
+- [x] lottie (To display animation in the app)
 - [x] shared_preferences (To store data in local storage)
 - [x] google_fonts (To use custom fonts)
-- [x] carousel_slider (For create a image slider)
+- [x] carousel_slider (For creating an image slider)
 - [x] page_view_dot_indicator (To show a slider dot indicator)
-- [x] flutter_staggered_grid_view (To make user friendly grid view)
+- [x] flutter_staggered_grid_view (To make a user-friendly grid view)
 - [x] video_player & chewie (To play video from network or assets)
 
 
@@ -88,4 +88,4 @@ Follow the below steps to run the application on you device.
 [Dart]: https://camo.githubusercontent.com/a0a1ad90011aa02e7e6f32be4998b8843f0884eed20b575c8a2189859550824d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646172742d2532333031373543322e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d64617274266c6f676f436f6c6f723d7768697465
 [Dart-url]: https://dart.dev
 [Download]: https://camo.envatousercontent.com/66cff805c4d35c74668291a51e21f978424565d9/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f70726f6772616d6d696e67776f726d686f6c652f656e7661746f2f6d61696e2f64656d6f2e676966
-[Download-url]: https://github.com
+[Download-url]: https://raw.githubusercontent.com/programmingwormhole/interactive_cares_lms/main/lc_lms_demo.apk
