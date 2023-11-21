@@ -9,7 +9,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../global_widgets/custom_alert.dart';
 import '../../utils/assets_manager.dart';
 
-
 class AuthServices {
   static Future<bool> register({
     required UserModel user,
@@ -24,14 +23,10 @@ class AuthServices {
     });
 
     if (request.statusCode == 200) {
-      print(request.body);
       pref.setString('token', jsonDecode(request.body)['response']['token']);
       pref.setString('name', user.fullName!);
-      print('Token is ${pref.getString('token')}');
       return true;
     } else {
-      print(request.body);
-      print('Failed to register ${request.statusCode}');
       return false;
     }
   }
@@ -40,16 +35,14 @@ class AuthServices {
     required UserModel user,
   }) async {
     final pref = await SharedPreferences.getInstance();
-    final request = await http
-        .post(AppUrls.login, headers: RequestHelpers.header(), body: {
+    final request =
+        await http.post(AppUrls.login, headers: RequestHelpers.header(), body: {
       'email': user.email,
       'password': user.password,
     });
 
     if (request.statusCode == 200) {
-      print(request.body);
       pref.setString('token', jsonDecode(request.body)['response']['token']);
-      print('Token is ${pref.getString('token')}');
       return true;
     } else {
       final decoded = jsonDecode(request.body);
@@ -63,7 +56,6 @@ class AuthServices {
         ),
         barrierDismissible: false,
       );
-      print('Failed to login ${request.body}');
       return false;
     }
   }

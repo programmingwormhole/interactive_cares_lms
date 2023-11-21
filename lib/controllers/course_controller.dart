@@ -19,7 +19,6 @@ class CourseController extends GetxController {
     expandedTileIndex.value = index;
     update();
     expandedTileIndex.refresh();
-    print(expandedTileIndex.value);
   }
 
   void nextLesson(List<Lessons>? lessons) {
@@ -76,7 +75,8 @@ class CourseController extends GetxController {
     for (var topic in course.topics!) {
       if (topic.lesson != null) {
         totalLessons += topic.lesson!.length;
-        completedLessons += topic.lesson!.where((lesson) => lesson.isComplete).length;
+        completedLessons +=
+            topic.lesson!.where((lesson) => lesson.isComplete).length;
       }
     }
 

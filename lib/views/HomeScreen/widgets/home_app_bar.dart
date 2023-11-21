@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:interactive_cares_lms/helpers/auth_helper.dart';
 import 'package:interactive_cares_lms/utils/assets_manager.dart';
 import 'package:interactive_cares_lms/utils/themes.dart';
-import '../../../utils/config.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});

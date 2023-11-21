@@ -16,7 +16,6 @@ class BookmarkController extends GetxController {
       update();
       bookmarks.refresh();
     }
-    print('Data $bookmarks');
   }
 
   void deleteBookmark(int index) async {

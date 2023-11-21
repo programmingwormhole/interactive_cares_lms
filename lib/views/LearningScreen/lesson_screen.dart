@@ -16,7 +16,6 @@ class LessonScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     final arg = Get.arguments;
-    int topicIndex = arg['topic_index'];
     CourseModel course = arg['course'] as CourseModel;
     final controller = Get.put(CourseController());
     final List<Lessons>? lessons =

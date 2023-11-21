@@ -104,12 +104,14 @@ class ModulesSection extends StatelessWidget {
                             return ListTile(
                               onTap: () {
                                 controller.currentLessonIndex.value = indexLess;
-                                print(controller.currentLessonIndex.value);
-                                Get.toNamed(RouteNames.lesson, arguments: {
-                                  'index' : indexLess,
-                                  'topic_index' : index,
-                                  'course' : course,
-                                });
+                                Get.toNamed(
+                                  RouteNames.lesson,
+                                  arguments: {
+                                    'index': indexLess,
+                                    'topic_index': index,
+                                    'course': course,
+                                  },
+                                );
                               },
                               contentPadding: EdgeInsets.zero,
                               leading: CircleAvatar(

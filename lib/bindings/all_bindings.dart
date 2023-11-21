@@ -5,7 +5,6 @@ import 'package:interactive_cares_lms/controllers/home_controller.dart';
 import 'package:interactive_cares_lms/controllers/login_controller.dart';
 import 'package:interactive_cares_lms/controllers/register_controller.dart';
 
-import '../controllers/lesson_controller.dart';
 
 class AllBindings extends Bindings {
   @override

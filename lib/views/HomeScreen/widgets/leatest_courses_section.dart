@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:interactive_cares_lms/controllers/home_controller.dart';
 import 'package:interactive_cares_lms/utils/themes.dart';
-
-import '../../../helpers/star_display_helper.dart';
 import '../../../utils/colors.dart';
 
 class LatestCoursesSection extends StatelessWidget {

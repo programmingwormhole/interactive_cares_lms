@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:interactive_cares_lms/controllers/register_controller.dart';
-import 'package:interactive_cares_lms/global_widgets/custom_alert.dart';
 import 'package:interactive_cares_lms/global_widgets/custom_button.dart';
 import 'package:interactive_cares_lms/helpers/form_helpers.dart';
 import 'package:interactive_cares_lms/routes/route_names.dart';
-import 'package:interactive_cares_lms/utils/assets_manager.dart';
 import 'package:interactive_cares_lms/utils/themes.dart';
 import '../../../utils/colors.dart';
 

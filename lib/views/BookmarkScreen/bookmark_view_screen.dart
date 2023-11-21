@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:interactive_cares_lms/controllers/bookmark_controller.dart';
-import 'package:interactive_cares_lms/controllers/course_controller.dart';
 import 'package:interactive_cares_lms/global_widgets/custom_button.dart';
 import 'package:interactive_cares_lms/global_widgets/in_app_bar.dart';
 import 'package:interactive_cares_lms/global_widgets/video_player.dart';
-import 'package:interactive_cares_lms/models/course_model.dart';
-import 'package:interactive_cares_lms/views/LearningScreen/widgets/lesson_info_widget.dart';
 import 'package:video_player/video_player.dart';
 
 class BookmarkPlayerScreen extends StatelessWidget {

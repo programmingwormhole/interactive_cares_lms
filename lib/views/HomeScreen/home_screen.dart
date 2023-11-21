@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:interactive_cares_lms/controllers/home_controller.dart';
 import 'package:interactive_cares_lms/views/HomeScreen/widgets/category_section.dart';
 import 'package:interactive_cares_lms/views/HomeScreen/widgets/featured_course_section.dart';
 import 'package:interactive_cares_lms/views/HomeScreen/widgets/home_app_bar.dart';
@@ -13,7 +11,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(HomeController());
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SafeArea(

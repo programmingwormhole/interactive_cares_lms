@@ -18,8 +18,6 @@ class MyCourseGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CourseController());
-
     return InkWell(
       onTap: () => Get.toNamed(RouteNames.courseLearn, arguments: course),
       child: SizedBox(
@@ -147,7 +145,8 @@ class MyCourseGrid extends StatelessWidget {
                             horizontal: 15,
                             vertical: 10,
                           ),
-                          child: Text("Continue Course",
+                          child: Text(
+                            "Continue Course",
                           ),
                         ),
                       ),

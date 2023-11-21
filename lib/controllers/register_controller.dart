@@ -20,10 +20,8 @@ class RegisterController extends GetxController {
 
     if (regex.hasMatch(email)) {
       emailError.value = '';
-      print('Valid $emailError');
     } else {
       emailError.value = 'Invalid email address';
-      print('Invalid $emailError');
     }
   }
 
@@ -45,13 +43,11 @@ class RegisterController extends GetxController {
       Get.dialog(
         CustomAlert(
           title: 'Congratulations',
-          description:
-          'You have completed your registration!',
+          description: 'You have completed your registration!',
           buttonText: 'Sounds Good!',
           image: AnimationManager.success,
           isAnimated: true,
-          onButtonTap: () =>
-              Get.offAllNamed(RouteNames.home),
+          onButtonTap: () => Get.offAllNamed(RouteNames.home),
         ),
         barrierDismissible: false,
       );
@@ -59,8 +55,7 @@ class RegisterController extends GetxController {
       Get.dialog(
         const CustomAlert(
           title: 'Error!',
-          description:
-          'Something is wrong while trying to register!',
+          description: 'Something is wrong while trying to register!',
           buttonText: 'Try Again',
           image: AnimationManager.error,
           isAnimated: true,

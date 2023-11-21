@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -56,7 +58,6 @@ class _ChewieVideoPlayerState extends State<ChewieVideoPlayer> {
                   onTap: () {
                     Duration currentDuration =
                         _chewieController.videoPlayerController.value.position;
-                    print('Bookmark called on $currentDuration');
                     storeBookmark(currentDuration);
                   },
                   iconData: Icons.book,
@@ -66,7 +67,6 @@ class _ChewieVideoPlayerState extends State<ChewieVideoPlayer> {
             },
     );
   }
-
 
   void storeBookmark(Duration bookmarkedTime) {
     List<Map<String, dynamic>> bookmarks = [];
@@ -95,7 +95,6 @@ class _ChewieVideoPlayerState extends State<ChewieVideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    print('From time ${widget.startAt.toString()}');
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,

@@ -13,20 +13,22 @@ class MyCoursesScreen extends StatelessWidget {
     final controller = Get.put(CourseController());
     return Scaffold(
       appBar: customAppBar(),
-      body: AlignedGridView.count(
-        padding: const EdgeInsets.all(10.0),
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        crossAxisCount: 2,
-        itemCount: 2,
-        itemBuilder: (ctx, index) {
-          final course = controller.featuredCourses[index];
-          return MyCourseGrid(
-            course: course,
-          );
-        },
-        mainAxisSpacing: 5.0,
-        crossAxisSpacing: 5.0,
+      body: SingleChildScrollView(
+        child: AlignedGridView.count(
+          padding: const EdgeInsets.all(10.0),
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          crossAxisCount: 2,
+          itemCount: 2,
+          itemBuilder: (ctx, index) {
+            final course = controller.featuredCourses[index];
+            return MyCourseGrid(
+              course: course,
+            );
+          },
+          mainAxisSpacing: 5.0,
+          crossAxisSpacing: 5.0,
+        ),
       ),
     );
   }
