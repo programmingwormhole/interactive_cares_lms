@@ -35,6 +35,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/mock/
     - assets/
     - assets/images/
     - assets/svg/

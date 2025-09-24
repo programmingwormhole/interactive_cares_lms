@@ -19,6 +19,8 @@ class Routes {
     GetPage(name: RouteNames.home, page: () => const BottomBarView()),
     GetPage(name: RouteNames.courseLearn, page: () => const LearningScreen()),
     GetPage(name: RouteNames.lesson, page: () => const LessonScreen()),
-    GetPage(name: RouteNames.bookmarkPlayer, page: () => const BookmarkPlayerScreen()),
+    GetPage(
+        name: RouteNames.bookmarkPlayer,
+        page: () => const BookmarkPlayerScreen()),
   ];
 }
